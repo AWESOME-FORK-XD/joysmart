@@ -126,7 +126,7 @@ echo "  Order ID      : $id"
 echo "  Register Date : $hariini"
 echo "  Expired Date  : $exp"
 echo "  Client Name   : $client"
-echo "  Script Ver    : Multiport_Pakya"
+echo "  Script Ver    : Multiport_JOYSMART"
 echo -e "\033[0;34m----------------------------------------\033[0m"
 echo " Update & Upgrade First Your VPS for Debian 10 & 11: "
 echo ""
@@ -326,7 +326,7 @@ addip
 
 clear
 echo -e "\033[0;34m----------------------------------------\033[0m"
-echo -e "\E[44;1;39m    MENU ADD IP MULTIPORT WS PAKYAVPN  \E[0m"
+echo -e "\E[44;1;39m    MENU ADD IP MULTIPORT WS JOYSMART  \E[0m"
 echo -e "\033[0;34m----------------------------------------\033[0m"
 echo ""
 echo -e " [\e[36m 01 \e[0m] Add IP"
