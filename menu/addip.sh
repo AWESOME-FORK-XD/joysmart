@@ -20,7 +20,7 @@ CYAN='\e[36m'
 LIGHT='\033[0;37m'
 tokengit=$(cat /etc/adminip/access.conf)
 MYIP=$(wget -qO- ipinfo.io/ip);
-adminip=$( curl -sS https://raw.githubusercontent.com/joysmartV2/allow/main/adminipvps | grep $MYIP )
+adminip=$( curl -sS https://raw.githubusercontent.com/joysmartV2/allow1/main/adminipvps | grep $MYIP )
 if [ $adminip = $MYIP ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
@@ -59,11 +59,11 @@ clear
 exit 0
 fi
 clear
-rm -rf /root/allow
+rm -rf /root/allow1
 read -p " - IP VPS      : " daftar
 echo -e "[ ${Lyellow}INFO${NC} ] Checking the IPVPS if Already Registered"
 sleep 1
-cek=$( curl -sS https://raw.githubusercontent.com/joysmartV2/allow/main/ipvps.conf | awk '{print $5}' | grep $daftar )
+cek=$( curl -sS https://raw.githubusercontent.com/joysmartV2/allow1/main/ipvps.conf | awk '{print $5}' | grep $daftar )
 if [[ $daftar = $cek ]]; then
 echo -e "\e[1;31m The IP VPS Has Been Registered\e[0m"
 sleep 2
@@ -95,22 +95,22 @@ add-ip
 fi
 
 daftarip=$(cat /root/data)
-rm -rf /root/allow
+rm -rf /root/allow1
 git config --global user.email "gts1437u@gmail.com"
 git config --global user.name "joysmartV2"
-git clone https://github.com/joysmartV2/allow.git
-mkdir /root/allow
-cd /root/allow/
+git clone https://github.com/joysmartV2/allow1.git
+mkdir /root/allow1
+cd /root/allow1/
 rm -rf .git
 git init
 touch ipvps.conf
-echo "$daftarip" >> /root/allow/ipvps.conf
+echo "$daftarip" >> /root/allow1/ipvps.conf
 echo -e "Client IP VPS Add Successfully"
 git init >/dev/null 2>&1
 git add .
 git commit -m register
 git branch -M main
-git remote add origin https://github.com/joysmartV2/allow.git
+git remote add origin https://github.com/joysmartV2/allow1.git
 git push -f https://${tokengit}@github.com/joysmartV2/allow.git
 echo -e "IPVPS Registration Completed"
 sleep 1
@@ -162,14 +162,14 @@ clear
 exit 0
 fi
 clear
-rm -rf /root/allow
+rm -rf /root/allow1
 rm -rf /root/data
 rm -rf /root/ipvps.conf
 git config --global user.email "gts1437u@gmail.com"
 git config --global user.name "joysmartV2"
 git clone https://github.com/joysmartV2/allow.git
-mkdir /root/allow
-cd /root/allow/
+mkdir /root/allow1
+cd /root/allow1/
 rm -rf .git
 git init
 touch ipvps.conf
@@ -193,8 +193,8 @@ git init >/dev/null 2>&1
 git add .
 git commit -m delete
 git branch -M main
-git remote add origin https://github.com/joysmartV2/allow.git
-git push -f https://${tokengit}@github.com/joysmartV2/allow.git
+git remote add origin https://github.com/joysmartV2/allow1.git
+git push -f https://${tokengit}@github.com/joysmartV2/allow1.git
 clear
 echo -e "\033[0;34m----------------------------------------\033[0m"
 echo " Client IP Deleted Successfully"
@@ -203,7 +203,7 @@ echo " Ip VPS       : $daftar"
 echo " Order ID     : $id"
 echo " Expired Date : $exp"
 echo " Client Name  : $client"
-rm -rf /root/allow
+rm -rf /root/allow1
 rm -rf /root/data
 rm -rf /root/ipvps.conf
 echo ""
@@ -223,8 +223,8 @@ rm -rf /root/allow
 git config --global user.email "gts1437u@gmail.com"
 git config --global user.name "joysmartV2"
 git clone https://github.com/joysmartV2/allow.git
-  mkdir /root/allow
-  cd /root/allow/
+  mkdir /root/allow1
+  cd /root/allow1/
   rm -rf .git
 git init
   touch ipvps.conf
@@ -254,9 +254,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/root/allow/ipvps.conf")
 		fi
 	done
 read -p "Expired (days): " masaaktif
-user=$(grep -E "^### " "/root/allow/ipvps.conf" | cut -d ' ' -f 5 | sed -n "${CLIENT_NUMBER}"p)
-exp=$(grep -E "^### " "/root/allow/ipvps.conf" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
-client=$(grep -E "^### " "/root/allow/ipvps.conf" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+user=$(grep -E "^### " "/root/allow1/ipvps.conf" | cut -d ' ' -f 5 | sed -n "${CLIENT_NUMBER}"p)
+exp=$(grep -E "^### " "/root/allow1/ipvps.conf" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
+client=$(grep -E "^### " "/root/allow1/ipvps.conf" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -280,7 +280,7 @@ echo "  Renew Date    : $now"
 echo "  Expired Date  : $exp4"
 echo "  Client Name   : $client"
 echo -e "\033[0;34m----------------------------------------\033[0m"
-rm -rf /root/allow
+rm -rf /root/allow1
 rm -rf /root/data
 rm -rf /root/ipvps.conf
 echo ""
@@ -296,13 +296,13 @@ clear
 exit 0
 fi
 clear
-rm -rf /root/allow
+rm -rf /root/allow1
 rm -rf /root/data
 rm -rf /root/ipvps.conf
 git config --global user.email "gts1437u@gmail.com"
 git config --global user.name "joysmartV2"
 git clone https://github.com/joysmartV2/allow.git
-cd /root/allow/
+cd /root/allow1/
 rm -rf .git
 git init
 touch ipvps.conf
@@ -316,7 +316,7 @@ echo -e "    No.   CLIENT NAME   EXP DATE   IPVPS"
 echo -e "\033[0;34m----------------------------------------\033[0m"
 grep -E "^### " "/root/allow/ipvps.conf" | cut -d ' ' -f 2-5 | awk '{print $4,$3,$1}' | nl -s '. ' 
 echo -e "\033[0;34m----------------------------------------\033[0m"
-rm -rf /root/allow
+rm -rf /root/allow1
 rm -rf /root/data
 rm -rf /root/ipvps.conf
 echo ""
